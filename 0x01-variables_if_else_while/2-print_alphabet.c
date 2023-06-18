@@ -8,9 +8,10 @@ int main(void)
 {
 	int ch;
 
-	for (ch = 'A'; ch >= 'Z'; ch++)
+	for (ch = 97; ch <= 122; ch++)
 	{
 		putchar(ch);
+		
 	}
 
 	return (0);
