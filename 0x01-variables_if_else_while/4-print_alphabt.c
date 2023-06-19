@@ -10,7 +10,18 @@ int main(void)
 
 	for (ch = 97; ch <= 122; ch++)
 	{
-		putchar(ch);
+		if (ch == 101)
+		{
+			continue;
+		}
+		else if (ch == 113)
+		{
+			continue;
+		}
+		else
+		{
+			putchar(ch);
+		}
 	}
 	putchar(10);
 	return (0);
