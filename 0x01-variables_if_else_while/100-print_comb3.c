@@ -18,7 +18,7 @@ int main(void)
 			{
 				continue;
 			}
-			else if (x == 57)
+			else if (x == 56 && y == 57)
 			{
 				putchar(x);
 				break;

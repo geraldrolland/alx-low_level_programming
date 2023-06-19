@@ -1,30 +1,34 @@
 #include <stdlib.h>
 #include <time.h>
-#include <string.h>
 #include <stdio.h>
+/**
+* main - Entry point
+*
+* Return: Always 0 (Success)
+*/
 /* more headers goes there */
 
 /* betty style doc for function main goes there */
 int main(void)
 {
-	char n;
+	int n;
+	int x;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	strlen(n);
-	char last_digit = strlen(n) - 1;
+	x = n % 10;
 
-	if (last_digit > '5')
+	if (x > 5)
 	{
-		printf("Last digit of %c is %c and is greater than 5", n, n[last_digit]);
+		printf("Last digit of %d is %d and is greater than 5\n", n, x);
 	}
-	else if (last_digit == 0)
+	else if (x == 0)
 	{
-		printf("Last digit of %c is %c and is 0", n, n[last_digit]);
+		printf("Last digit of %d is %d and is 0\n", n, x);
 	}
-	else
+	else if (x < 6 && x != 0)
 	{
-		printf("Last digit of %c is %c and is less than 6 and not 0", n, n[last_digit]);
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, x);
 	}
 	/* your code goes there */
 	return (0);
