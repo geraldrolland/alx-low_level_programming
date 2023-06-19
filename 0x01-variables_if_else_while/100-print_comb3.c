@@ -18,6 +18,11 @@ int main(void)
 			{
 				continue;
 			}
+			else if (x == 57)
+			{
+				putchar(x);
+				break;
+			}
 			else
 			{
 				putchar(x);
@@ -27,6 +32,5 @@ int main(void)
 			}
 		}
 	}
-	putchar(10);
 	return (0);
 }
