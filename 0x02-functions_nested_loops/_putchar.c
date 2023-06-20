@@ -5,7 +5,7 @@
  *return 1 on success
  *return -1 on erro 
  */
-int main(char c)
+int _putchar(char c)
 {
-	return(write(1, &c, -1));
+	return (write(1, &c, 1));
 }
