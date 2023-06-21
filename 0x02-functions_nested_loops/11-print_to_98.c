@@ -7,12 +7,10 @@
 */
 void print_to_98(int n)
 {
-	int x;
-	int y;
 
 	if (n <= 98)
 	{
-	for (; x < 98; x++)
+	for (; n < 98; x++)
 	{
 	if (n == 98)
 	{
