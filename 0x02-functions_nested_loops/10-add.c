@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* main - Entry point
+* add -  adds two integers and returns the result.
 *@a: check character a
 *@b: check character b
 * Return: c
