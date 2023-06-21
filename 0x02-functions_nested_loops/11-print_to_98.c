@@ -23,9 +23,16 @@ void print_to_98(int n)
 	}
 	else
 	{
-	for (y = n; y >= 98; y--)
+	for (y = n; y > 98; y--)
+	{
+	if (y == 98)
+	{
+	printf("%d", y);
+	}
+	else
 	{
 	printf("%d, ", y);
+	}
 	}
 	}
 }
