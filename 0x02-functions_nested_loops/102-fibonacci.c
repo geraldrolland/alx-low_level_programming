@@ -6,24 +6,14 @@
 */
 int main(void)
 {
-	int a;
-	int b;
-	int c;
-	int i;
-
-	a = 1;
-	b = 2;
-	c = a + b;
-	printf("%d, ", a);
-	printf("%d, ", b);
-	printf("%d, ", c);
-	for (i = 0; i <= 47; i++)
+	int count;
+	unsigned long fib1 = 0, fib2 = 1, sum;	for (count = 0; count < 50; count++)
 	{
-	a = b;
-	b = c;
-	c = a + b;
-	printf("%d, ", c);
-	}
-	printf("\n");
-	return (0);
+		sum = fib1 + fib2;
+		printf("%lu", sum);		fib1 = fib2;
+		fib2 = sum;		if (count == 49)
+			printf("\n");
+		else
+			printf(", ");
+	}	return (0);
 }
