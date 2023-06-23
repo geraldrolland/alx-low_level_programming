@@ -19,6 +19,10 @@ int main(void)
 	{
 	printf("Fizz");
 	}
+	else if (i % 5 == 0)
+	{
+	printf("Buzz");
+	}
 	else
 	{
 	printf("%d", i);
@@ -31,4 +35,3 @@ int main(void)
 	printf("\n");
 	return (0);
 }
-
