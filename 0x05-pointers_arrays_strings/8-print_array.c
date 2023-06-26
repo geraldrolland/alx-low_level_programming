@@ -3,7 +3,7 @@
 /**
 *print_array - n elements of an array of integers
 *@a:array of integers
-*@n:number of element of the array to be printed 
+*@n:number of element of the array to be printed
 * Return: void
 */
 
