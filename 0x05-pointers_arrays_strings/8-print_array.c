@@ -2,8 +2,8 @@
 #include <stdio.h>
 /**
 *print_array - n elements of an array of integers
-*@a:check character a
-*@n: check character n
+*@a:array of integers
+*@n:number of element of the array to be printed 
 * Return: void
 */
 
@@ -16,7 +16,7 @@ void print_array(int *a, int n)
 	printf("%d", a[j]);
 	if (j != (n - 1))
 	{
-	printf(",");
+	printf(", ");
 	}
 	}
 	printf("\n");
