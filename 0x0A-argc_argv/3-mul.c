@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	res = 1;
 	if (argv[i] == NULL)
 	{
-	printf("Error");
+	printf("Error\n");
 	}
 	else
 	{
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-	printf("Error");
+	printf("Error\n");
 	}
 	}
 	return (1);
