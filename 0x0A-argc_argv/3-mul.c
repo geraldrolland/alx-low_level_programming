@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	{
 	for (; i < argc; i++)
 	{
-	x = strtol(argv[i], NULL, 10);
+	x = atoi(argv[i]);
 	res = res * x;
 	}
 	printf("%d\n", res);
