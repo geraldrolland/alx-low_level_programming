@@ -23,8 +23,6 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-	if (strlen(argv[i]) >= 1)
-	{
 	for (; i < argc; i++)
 	{
 	x = atoi(argv[i]);
@@ -32,7 +30,5 @@ int main(int argc, char *argv[])
 	}
 	printf("%d\n", res);
 	}
-	}
 	return (0);
 }
-
