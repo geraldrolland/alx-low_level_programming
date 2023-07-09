@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 	if (argv[i] == NULL)
 	{
 	printf("Error\n");
+	return (1);
 	}
 	else
 	{
@@ -33,6 +34,6 @@ int main(int argc, char *argv[])
 	printf("%d\n", res);
 	}
 	}
-	return (1);
+	return (0);
 }
 
