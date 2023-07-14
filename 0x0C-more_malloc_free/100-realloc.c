@@ -13,10 +13,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	char *ptr1;
 	unsigned int i;
 
-	ptr1 = (void *)malloc(new_size);
-	strcpy(ptr1, ptr);
-	if (new_size > old_size)
-		return (ptr1);
 	if (new_size == old_size)
 		return (ptr);
 	if (ptr == NULL)
