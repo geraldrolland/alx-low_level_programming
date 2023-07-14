@@ -10,7 +10,8 @@
 */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void *ptr1;
+	char *ptr1;
+	unsigned int i;
 
 	ptr1 = (void *)malloc(new_size);
 	strcpy(ptr1, ptr);
@@ -21,13 +22,25 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (ptr == NULL)
 	{
 	ptr1 = malloc(new_size);
-	return (ptr1);
-	free(ptr1);
-	}
-	if (new_size == 0 && ptr != NULL)
-	{
-	free(ptr);
+	if (ptr1 == NULL)
+		return (NULL);
 	return (NULL);
 	}
+	else
+	{
+	if (new_size == 0)
+	{
+		free(ptr);
+		return (NULL);
+	}
+	}
+	ptr1 = malloc(new_size);
+	if (ptr1 == NULL)
+		return (NULL);
+	for (i = 0; i < old_size && i < new_size; i++)
+	{
+		ptr1[i] = ((char *) ptr)[i];
+	}
+	free(ptr);
 	return (ptr1);
 }
