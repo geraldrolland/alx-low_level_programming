@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "dog.h"
+#include "dog.h"i
 /**
 *init_dog - initialise structure
 *@d: input value
