@@ -1,3 +1,5 @@
+#include "lists.h"
+
 /**
 *_strlen - prints the lenght of a string
 *@str: pointer to a constant string
