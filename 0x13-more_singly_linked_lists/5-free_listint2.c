@@ -9,9 +9,6 @@ void free_listint2(listint_t **head)
 	listint_t *temp;
 	listint_t *ptr = *head;
 
-	/*if (head == NULL)
-		return (NULL);*/
-
 	while (1 > 0)
 	{
 		if (ptr->next == NULL)
