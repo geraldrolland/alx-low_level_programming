@@ -1,10 +1,13 @@
 #include "lists.h"
+#include <stdio.h>
+size_t looped_listint_len(const listint_t *head);
+size_t print_listint_safe(const listint_t *head);
 /**
-*print_listint_safe - print list
+*looped_listint_len - print list
 *@head: head pointer to the first node
 *Return: count
 */
-size_t print_listint_safe(const listint_t *head)
+size_t looped_listint_len(const listint_t *head)
 {
 	const listint_t *ptr;
 	const listint_t *temp;
@@ -40,4 +43,34 @@ size_t print_listint_safe(const listint_t *head)
 		temp = (temp->next)->next;
 	}
 	return (0);
+}
+/**
+*print_listint_safe - print list
+*@head: head pointer
+*Return: n
+*/
+size_t print_listint_safe(const listint_t *head)
+{
+	size_t nodes, index = 0;
+
+	nodes = looped_listint_len(head);
+
+	if (nodes == 0)
+	{
+		for (; head != NULL; nodes++)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+		}
+	}
+	else
+	{
+		for (index = 0; index < nodes; index++)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+		}
+		printf("->[%p] %d\n", (void *)head, head->n);
+	}
+	return (nodes);
 }
