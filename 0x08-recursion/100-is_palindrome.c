@@ -9,6 +9,9 @@ int is_palindrome(char *s)
 	int res;
 	char ch = *s;
 
+	if (*s == '\0')
+		return (1);
+
 	res = check_palin(s, ch);
 
 	return (res);
@@ -17,6 +20,7 @@ int is_palindrome(char *s)
  *check_palin - check if a number is a palindrome
  *@s: pointer to a string
  *@ch: character variable
+ *Return: num on success
  */
 int check_palin(char *s, char ch)
 {
@@ -25,7 +29,7 @@ int check_palin(char *s, char ch)
 	s = s + 1;
 	if (*s == ch && *(s + 1) == '\0')
 		return (1);
-	if (*s != ch && *(s + 1) =='\0')
+	if (*s != ch && *(s + 1) == '\0')
 		return (0);
 	num = check_palin(s, ch);
 	return (num);
