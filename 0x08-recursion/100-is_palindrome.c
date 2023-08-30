@@ -10,7 +10,7 @@ int is_palindrome(char *s)
 	char ch = *s;
 
 	if (*s == '\0')
-		return (1);
+		return (0);
 
 	res = check_palin(s, ch);
 
