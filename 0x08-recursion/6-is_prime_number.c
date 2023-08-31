@@ -8,12 +8,10 @@ int is_prime_number(int num)
 {
 	int i, res;
 
-	if (num == 1 || num == -1)
+	if (num <= 1)
 	{
 	return (0);
 	}
-	if (num < 1 && num != -1)
-		num = -1 * num;
 	i = num;
 	i--;
 	res = check_prime(num, i);
