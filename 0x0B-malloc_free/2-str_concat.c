@@ -3,7 +3,7 @@
 /**
  *str_concat - concatanate two strings
  *@s1: pointer to the first string
- *s2: pointer to the second string
+ *@s2: pointer to the second string
  *Return: ptr on success or NULL on failure
  */
 char *str_concat(char *s1, char *s2)
@@ -11,11 +11,12 @@ char *str_concat(char *s1, char *s2)
 	int j, i, k = 0;
 	int size1, size2, size;
 	char *ptr;
+
 	if (s1 == NULL)
 	{
 		s1 = "";
 	}
-	if(s2 == NULL)
+	if (s2 == NULL)
 	{
 		s2 = "";
 	}
@@ -25,7 +26,7 @@ char *str_concat(char *s1, char *s2)
 	}
 	size1 = str_len(s1);
 	size2 = str_len(s2);
-	size = (size1 + size2);
+	size = (size1 + size2) + 1;
 	ptr = (char *)malloc(sizeof(char) * size);
 
 	if (ptr == NULL)
