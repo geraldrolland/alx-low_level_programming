@@ -8,6 +8,10 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
+	if (d->name == NULL)
+		d->name = "(nil)";
+	if (d->owner == NULL)
+		d->owner = "(nil)";
 	d->name = name;
 	d->age = age;
 	d->owner = owner;
