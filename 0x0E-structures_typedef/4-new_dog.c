@@ -1,5 +1,7 @@
 #include <stdlib.h>
 #include "dog.h"
+int _strlen(char *str);
+char *_strcpy(char *str1, char *str2);
 /**
  *new_dog -  creates a new dog.
  *@name: pointer to a string
@@ -16,12 +18,47 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		return (NULL);
 	}
-	ptr->age = age;
-	ptr->name = name;
-	ptr->owner = owner;
+	if (name == NULL)
+		name = "(nil)";
+	if (owner == NULL)
+		owner = "(nil)";
+
+	ptr->name = malloc(_strlen(name) + 1);
 	if (ptr->name == NULL)
-		ptr->name = "(nil)";
-	if (ptr->owner == NULL)
-		ptr->owner = "(nil)";
+		return (NULL);
+	ptr->name = _strcpy(ptr->name, name);
+	if (ptr->name == NULL)
+		return (NULL);
+	ptr->owner = malloc(_strlen(owner) + 1 );
+	ptr->owner = _strcpy(ptr->owner, owner);
+	ptr->age = age;
 	return (ptr);
+}
+/**
+ *_strlen - return the size of a string
+ *@str: pointer to a string
+ *Retrun: size
+ */
+int _strlen(char *str)
+{
+	int i, size = 0;
+
+	for (i = 0; str[i] != '\0'; i++)
+		size++;
+	return size;
+}
+/**
+ *_strcpy - copies string
+ *@str1: first string
+ *@str2: second string
+ *Return: str1
+ */
+char *_strcpy(char *str1, char *str2)
+{
+	int i;
+
+	for (i = 0; str2[i] != '\0'; i++)
+		str1[i] = str2[i];
+	str1[i] = '\0';
+	return (str1);
 }
