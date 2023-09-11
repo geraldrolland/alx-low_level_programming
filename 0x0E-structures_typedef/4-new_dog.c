@@ -27,9 +27,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (ptr->name == NULL)
 		return (NULL);
 	ptr->name = _strcpy(ptr->name, name);
-	if (ptr->name == NULL)
-		return (NULL);
 	ptr->owner = malloc(_strlen(owner) + 1);
+	if (ptr->owner == NULL)
+		return (NULL);
 	ptr->owner = _strcpy(ptr->owner, owner);
 	ptr->age = age;
 	return (ptr);
