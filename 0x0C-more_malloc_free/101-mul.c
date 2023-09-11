@@ -14,6 +14,7 @@ int _str_len(char *s);
 int is_digit(char *s)
 {
 	int i = 0;
+
 	while (s[i])
 	{
 		if (s[i] < '0' || s[i] > '9')
@@ -31,7 +32,7 @@ void errors(void)
 	exit(98);
 }
 /**
- * _strlen - returns the length of a string
+ * _str_len - returns the length of a string
  * @s: string to evaluate
  *
  * Return: the length of the string
@@ -39,6 +40,7 @@ void errors(void)
 int _str_len(char *s)
 {
 	int i = 0;
+
 	while (s[i] != '\0')
 	{
 		i++;
@@ -56,6 +58,7 @@ int main(int argc, char *argv[])
 {
 	char *s1, *s2;
 	int len1, len2, len, i, carry, digit1, digit2, *result, a = 0;
+
 	s1 = argv[1], s2 = argv[2];
 	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
 		errors();
@@ -74,7 +77,7 @@ int main(int argc, char *argv[])
 		for (len2 = _str_len(s2) - 1; len2 >= 0; len2--)
 		{
 			digit2 = s2[len2] - '0';
-			carry += result[len1 + len2 + 1] + (digit1 *digit2);
+			carry += result[len1 + len2 + 1] + (digit1 * digit2);
 			result[len1 + len2 + 1] = carry % 10;
 			carry /= 10;
 		}
