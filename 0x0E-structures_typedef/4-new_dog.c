@@ -29,7 +29,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	ptr->name = _strcpy(ptr->name, name);
 	if (ptr->name == NULL)
 		return (NULL);
-	ptr->owner = malloc(_strlen(owner) + 1 );
+	ptr->owner = malloc(_strlen(owner) + 1);
 	ptr->owner = _strcpy(ptr->owner, owner);
 	ptr->age = age;
 	return (ptr);
@@ -37,7 +37,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 /**
  *_strlen - return the size of a string
  *@str: pointer to a string
- *Retrun: size
+ *Return: size
  */
 int _strlen(char *str)
 {
@@ -45,7 +45,7 @@ int _strlen(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 		size++;
-	return size;
+	return (size);
 }
 /**
  *_strcpy - copies string
