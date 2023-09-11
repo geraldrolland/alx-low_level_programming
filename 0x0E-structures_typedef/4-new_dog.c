@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "dog.h"
 int _strlen(char *str);
-char *_strcpy(char *str1, char *str2);
+void _strcpy(char *str1, char *str2);
 /**
  *new_dog -  creates a new dog.
  *@name: pointer to a string
@@ -26,11 +26,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 	ptr->name = malloc(_strlen(name) + 1);
 	if (ptr->name == NULL)
 		return (NULL);
-	ptr->name = _strcpy(ptr->name, name);
+	_strcpy(ptr->name, name);
 	ptr->owner = malloc(_strlen(owner) + 1);
 	if (ptr->owner == NULL)
 		return (NULL);
-	ptr->owner = _strcpy(ptr->owner, owner);
+	_strcpy(ptr->owner, owner);
 	ptr->age = age;
 	return (ptr);
 }
@@ -53,12 +53,11 @@ int _strlen(char *str)
  *@str2: second string
  *Return: str1
  */
-char *_strcpy(char *str1, char *str2)
+void _strcpy(char *str1, char *str2)
 {
 	int i;
 
 	for (i = 0; str2[i] != '\0'; i++)
 		str1[i] = str2[i];
 	str1[i] = '\0';
-	return (str1);
 }
