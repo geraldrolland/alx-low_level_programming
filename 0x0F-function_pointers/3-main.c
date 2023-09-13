@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int calc, num1, num2;
-	int (*ptr)(int , int);
+	int (*ptr)(int, int);
 
 	if (argc != 4)
 	{
