@@ -1,4 +1,4 @@
-#include <stddef.h>
+#include <stdlib.h>
 #include "3-calc.h"
 /**
  *get_op_func - selects the correct function to perform the operation
@@ -25,5 +25,5 @@ int (*get_op_func(char *s))(int, int)
 	}
 	i++;
 	}
-	return (NULL);
+	return (ops[i].f);
 }
