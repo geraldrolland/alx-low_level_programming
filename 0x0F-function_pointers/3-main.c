@@ -10,7 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int calc, num1, num2;
+	int num1, num2;
 	int (*ptr)(int, int);
 
 	if (argc != 4)
@@ -33,7 +33,6 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 	ptr = get_op_func(argv[2]);
-	calc = ptr(num1, num2);
-	printf("%d\n", calc);
+	printf("%d\n", ptr(num1, num2));
 	return (0);
 }
