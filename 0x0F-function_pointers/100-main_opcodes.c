@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "function_pointers.h"
+#include <stdlib.h>
 /**
  *main - main function
  *@argc: argument count
