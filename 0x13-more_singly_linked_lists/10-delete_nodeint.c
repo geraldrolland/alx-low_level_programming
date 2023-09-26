@@ -4,13 +4,14 @@ unsigned int node_count(listint_t *head);
 /**
  *delete_nodeint_at_index - delete index at a specific node
  *@head: pointer to the head pointer
- *@index of the node to deleted
+ *@index: of the node to deleted
  *Return: 1 on success or -1 on failure
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	unsigned int i = 0, size = 0;
 	listint_t *ptr1 = NULL, *ptr2 = NULL;
+
 	if (head == NULL || *head == NULL)
 		return (-1);
 	size = node_count(*head);
