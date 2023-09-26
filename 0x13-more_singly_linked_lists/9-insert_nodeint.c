@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "lists.h"
+unsigned int node_count(listint_t *head);
 /**
  *insert_nodeint_at_index - insert node at specified index
  *@head: pointer to the head pointer
@@ -14,13 +15,9 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	listint_t *ptr2 = NULL;
 	listint_t *new = NULL;
 
-	if (head == NULL || *head == NULL)
+	if (head == NULL)
 		return (NULL);
-	size = node_size(*head);
-	if (idx > size)
-		return (NULL);
-	ptr1 = *head;
-	if (idx == 0)
+	if (idx == 0 || *head == NULL)
 	{
 		new = malloc(sizeof(listint_t));
 		if (new == NULL)
@@ -30,6 +27,10 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		*head = new;
 		return (*head);
 	}
+	ptr1 = *head;
+	size = node_count(*head);
+	if (idx > size - 1)
+		return (NULL);
 	while (i < size)
 	{
 		if (i == idx)
@@ -54,9 +55,9 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
  *@head: pointer to the head node
  *Return: count
  */
-int node_size(listint_t *head)
+unsigned int node_count(listint_t *head)
 {
-	int count = 0;
+	unsigned int count = 0;
 	listint_t *ptr;
 
 	ptr = head;
