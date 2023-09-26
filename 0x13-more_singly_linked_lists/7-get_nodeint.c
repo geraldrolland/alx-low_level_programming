@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include "lists.h"
-int node_size(listint_t *head);
 /**
  *get_nodeint_at_index - get the node in a particular index
  *@head: pointer to the head node
