@@ -2,7 +2,7 @@
 #include "lists.h"
 /**
  *add_nodeint_end - add node at the end of a list
- *head: pointer to the head pointer
+ *@head: pointer to the head pointer
  *@n: data value
  *Return: *head on success or NULL on failure
  */
