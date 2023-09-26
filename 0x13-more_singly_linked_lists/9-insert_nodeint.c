@@ -27,10 +27,10 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		*head = new;
 		return (*head);
 	}
-	ptr1 = *head;
 	size = node_count(*head);
 	if (idx > size - 1)
 		return (NULL);
+	ptr1 = *head;
 	while (i < size)
 	{
 		if (i == idx)
@@ -51,7 +51,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	return (*head);
 }
 /**
- *node_size - size of a list
+ *node_count - size of a list
  *@head: pointer to the head node
  *Return: count
  */
