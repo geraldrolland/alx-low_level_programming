@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <stdlib.h>
+#include "main.h"
 size_t _strlen(char *str);
 /**
  *append_text_to_file - append text to an existing file
