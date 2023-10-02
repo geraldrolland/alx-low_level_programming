@@ -78,10 +78,10 @@ int main(int argc, char *argv[])
 	{
 	dprintf(STDERR_FILENO,
 	"Error: Can't write to %s\n", argv[2]);
-	free(buf;
+	free(buf);
 	exit(99);
 	}
-	rr = read(from, buffer, 1024);
+	rr = read(from, buf, 1024);
 	to = open(argv[2], O_WRONLY | O_APPEND);
 	} while (rr > 0);
 	free(buf);
