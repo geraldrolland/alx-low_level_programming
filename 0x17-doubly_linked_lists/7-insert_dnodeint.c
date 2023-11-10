@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- *insert_dnodeint_at_index - insert node at specified index
- *@h: pointer to the head pointer
- *@idx: index of specified element
- *@n: data to insert
- *Return: *h on success or NULL on failure
+ * insert_dnodeint_at_index - insert node at specified index
+ * @h: pointer to the head pointer
+ * @idx: index of specified element
+ * @n: data to insert
+ * Return: *h on success or NULL on failure
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
@@ -38,8 +38,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		ptr = temp;
 		temp = temp->next;
 	}
-	if (temp->next == NULL)
-		return (add_dnodeint_end(h, n));
 	ptr->next = new;
 	new->prev = ptr;
 	new->next = temp;
@@ -47,10 +45,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new->n = n;
 	return (*h);
 }
+
 /**
- *count_node - return the size of list
- *@head: pointer to the head pointer
- *Return: count
+ * count_node - return the size of list
+ * @head: pointer to the head pointer
+ * Return: count
  */
 unsigned int count_node(dlistint_t **head)
 {
@@ -64,3 +63,4 @@ unsigned int count_node(dlistint_t **head)
 	}
 	return (count);
 }
+
