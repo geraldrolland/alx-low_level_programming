@@ -1,7 +1,5 @@
 #include "lists.h"
 
-unsigned int count_node(dlistint_t **head);
-
 /**
  *insert_dnodeint_at_index - insert node at specified index
  *@h: pointer to the head pointer
