@@ -18,22 +18,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (key == NULL || strlen(key) == 0 || value == NULL || ht == NULL)
 		return (0);
-	key_copy = strdup(key);
-	value_copy = strdup(value);
 	hash_code = key_index((const unsigned char *)key, ht->size);
-	if (key_copy == NULL || value_copy == NULL)
-		return (0);
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
-	{
-		free(key_copy);
-		free(value_copy);
 		return (0);
-	}
+	key_copy = strdup(key);
+	value_copy = strdup(value);
+	if (key_copy == NULL || value_copy == NULL)
+		return (0);
 	if (ht->array[hash_code] != NULL)
 	{
 		ptr = ht->array[hash_code];
-		while(ptr != NULL)
+		while (ptr != NULL)
 		{
 			if (strcmp(ptr->key, key_copy) == 0)
 			{
