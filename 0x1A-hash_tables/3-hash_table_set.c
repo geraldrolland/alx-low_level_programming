@@ -16,16 +16,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ht == NULL || key == NULL || strlen(key) == 0 || value == NULL)
 		return (0);
-	new_node = malloc(sizeof(hash_node_t));
-	if (new_node == NULL)
-		return (0);
 	hash_code = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[hash_code] != NULL)
 	{
 		ptr = ht->array[hash_code];
-		free(new_node);
 		return (check_dup(ptr, key, value));
 	}
+	new_node = malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
+		return (0);
 	key_copy = strdup(key);
 	if (key_copy == NULL)
 	{
