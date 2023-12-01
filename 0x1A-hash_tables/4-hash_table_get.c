@@ -15,6 +15,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (strlen(key) == 0 || *key == '\0' || key == NULL)
 		return (NULL);
 	hash_code = key_index((const unsigned char *)key, ht->size);
+	if (hash_code >= ht->size)
+		return (NULL);
 	ptr = ht->array[hash_code];
 	if (ptr != NULL)
 	{
