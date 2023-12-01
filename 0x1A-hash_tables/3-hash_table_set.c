@@ -20,7 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht->array[hash_code] != NULL)
 	{
 		ptr = ht->array[hash_code];
-		return (check_dup(ptr, key, value));
+		return (check_dup(&ptr, key, value));
 	}
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
@@ -52,7 +52,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  *@key: key
  *Return: 1 or 0
  */
-int check_dup(hash_node_t *ptr, const char *key, const char *value)
+int check_dup(hash_node_t **ptr, const char *key, const char *value)
 {
 	hash_node_t *temp, *new_node;
 	char *value_copy, *key_copy;
@@ -60,16 +60,16 @@ int check_dup(hash_node_t *ptr, const char *key, const char *value)
 	value_copy = strdup(value);
 	if (value_copy == NULL)
 		return (0);
-	temp = ptr;
-	while (ptr != NULL)
+	temp = *ptr;
+	while (temp != NULL)
 	{
-		if (strcmp(ptr->key, key) == 0)
+		if (strcmp(temp->key, key) == 0)
 		{
-			free(ptr->value);
-			ptr->value = value_copy;
+			free(temp->value);
+			temp->value = value_copy;
 			return (1);
 		}
-		ptr = ptr->next;
+		temp = temp->next;
 	}
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
@@ -84,9 +84,9 @@ int check_dup(hash_node_t *ptr, const char *key, const char *value)
 		free(value_copy);
 		return (0);
 	}
-	new_node->next = temp;
+	new_node->next = *ptr;
 	new_node->key = key_copy;
 	new_node->value = value_copy;
-	temp = new_node;
+	*ptr = new_node;
 	return (1);
 }
