@@ -22,10 +22,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	value_copy = strdup(value);
 	hash_code = key_index((const unsigned char *)key, ht->size);
 	new_node = malloc(sizeof(hash_node_t));
-	if (new_node == NULL)
-		return (0);
 	if (key_copy == NULL || value_copy == NULL)
 		return (0);
+	if (new_node == NULL)
+	{
+		free(key_copy);
+		free(value_copy);
+		return (0);
+	}
 	new_node->key = key_copy;
 	new_node->value = value_copy;
 	new_node->next = NULL;
