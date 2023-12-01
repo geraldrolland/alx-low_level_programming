@@ -1,5 +1,4 @@
 #include "hash_tables.h"
-int check_dup(hash_node_t *ptr, const char *key, const char *value);
 
 /**
  * hash_table_set - insert an element in the hash table
@@ -52,11 +51,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  *@ptr: pointer to the first node in the list
  *@value: value
  *@key: key
- *Return: 1
+ *Return: 1 or 0
  */
 int check_dup(hash_node_t *ptr, const char *key, const char *value)
 {
-	hash_node_t *temp;
+	hash_node_t *temp, *new_node;
 	char *value_copy, *key_copy;
 
 	value_copy = strdup(value);
